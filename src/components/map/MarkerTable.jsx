@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const MarkerTable = ({ markers, onRemoveMarker }) => {
     return (
         <div className="marker-table-container">
@@ -5,6 +6,7 @@ const MarkerTable = ({ markers, onRemoveMarker }) => {
             <table className="marker-table">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Latitude</th>
                         <th>Longitude</th>
                         <th>Action</th>
@@ -13,8 +15,9 @@ const MarkerTable = ({ markers, onRemoveMarker }) => {
                 <tbody>
                     {markers.map((marker, index) => (
                         <tr key={index}>
-                            <td>{marker.lat}</td>
-                            <td>{marker.lng}</td>
+                            <td>{index + 1}</td>
+                            <td>{marker.lat.toFixed(2)}°N</td>
+                            <td>{marker.lng.toFixed(2)}°E</td>
                             <td>
                                 <button onClick={() => onRemoveMarker(index)}>
                                     Remove
