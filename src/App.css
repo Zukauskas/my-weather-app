@@ -4,3 +4,12 @@
     padding: 2rem;
     text-align: center;
 }
+
+.map {
+    display: flex;
+}
+
+.mapContainer {
+    width: 70%;
+    height: 500px;
+}
