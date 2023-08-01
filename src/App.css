@@ -13,3 +13,8 @@
     width: 70%;
     height: 500px;
 }
+
+.graphs-container {
+    display: flex;
+    flex-wrap: wrap;
+}
