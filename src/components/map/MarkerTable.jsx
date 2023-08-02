@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import "./MarkerTable.css";
+
 const MarkerTable = ({ markers, onRemoveMarker, updateCharts }) => {
     return (
         <div className="marker-table-container">

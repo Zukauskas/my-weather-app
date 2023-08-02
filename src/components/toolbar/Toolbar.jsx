@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Global } from "../context/Global.jsx";
+import "./Toolbar.css";
 
 const Toolbar = () => {
     const {
