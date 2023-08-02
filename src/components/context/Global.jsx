@@ -39,6 +39,7 @@ export const GlobalProvider = ({ children }) => {
                 setEndDate,
                 endDate,
                 weatherVariablesHandler,
+                weatherVariables,
                 submitHandler,
                 weatherData,
                 markers,

@@ -81,7 +81,8 @@
     margin-bottom: 10px;
 }
 
-.toolbar-button {
+.toolbar-button,
+.marker-table-button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -91,7 +92,8 @@
     transition: background-color 0.3s ease;
 }
 
-.toolbar-button:hover {
+.toolbar-button:hover,
+.marker-table-button:hover {
     background-color: #0056b3;
 }
 
