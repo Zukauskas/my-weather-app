@@ -62,7 +62,9 @@ Would like to run this project locally? Open terminal and follow these steps:
    `sh
  npm run dev
  `
+ 
    The app should be running at http://localhost:5173/
+   
    Take note that running locally you will need and API key from Google Maps
 
 ## Usage
