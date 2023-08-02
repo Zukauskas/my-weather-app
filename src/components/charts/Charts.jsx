@@ -12,7 +12,7 @@ const getRandomColor = () => {
     return `rgb(${r}, ${g}, ${b})`;
 };
 
-const Graphs = () => {
+const Charts = () => {
     const { weatherData } = useContext(Global);
     if (!weatherData) {
         return (
@@ -114,4 +114,4 @@ const Graphs = () => {
     );
 };
 
-export default Graphs;
+export default Charts;
