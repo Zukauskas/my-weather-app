@@ -2,7 +2,7 @@
 const MarkerTable = ({ markers, onRemoveMarker }) => {
     return (
         <div className="marker-table-container">
-            <h2>Marker Coordinates</h2>
+            <h2 className="table-title">Marker Coordinates</h2>
             <table className="marker-table">
                 <thead>
                     <tr>
@@ -19,7 +19,9 @@ const MarkerTable = ({ markers, onRemoveMarker }) => {
                             <td>{marker.lat.toFixed(2)}°N</td>
                             <td>{marker.lng.toFixed(2)}°E</td>
                             <td>
-                                <button onClick={() => onRemoveMarker(index)}>
+                                <button
+                                    className="remove-button"
+                                    onClick={() => onRemoveMarker(index)}>
                                     Remove
                                 </button>
                             </td>
