@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const MarkerTable = ({ markers, onRemoveMarker }) => {
+const MarkerTable = ({ markers, onRemoveMarker, updateCharts }) => {
     return (
         <div className="marker-table-container">
             <h2 className="table-title">Marker Coordinates</h2>
@@ -29,6 +29,9 @@ const MarkerTable = ({ markers, onRemoveMarker }) => {
                     ))}
                 </tbody>
             </table>
+            <button className="marker-table-button" onClick={updateCharts}>
+                Update Charts
+            </button>
         </div>
     );
 };
