@@ -6,6 +6,7 @@
     gap: 15px;
 }
 
-.charts > .main-title {
+.charts > .main-title,
+.charts > .no-charts-container {
     text-align: center;
 }

@@ -19,7 +19,7 @@ const Charts = () => {
         return (
             <div className="charts">
                 <h2 className="main-title">Charts</h2>
-                <div className="charts-container">No charts to show</div>
+                <div className="no-charts-container">No charts to show</div>
             </div>
         );
     }
@@ -37,8 +37,15 @@ const Charts = () => {
                 text: `Marker ${index + 1}`,
             },
             xAxis: {
-                type: "category",
+                type: "datetime",
                 categories: labels,
+                labels: {
+                    step: 24,
+                    formatter: function () {
+                        let label = this.value.substring(0, 10);
+                        return label;
+                    },
+                },
             },
             yAxis: [],
             series: datasets,
