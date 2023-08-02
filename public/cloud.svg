@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    xmlns:cc="http://web.resource.org/cc/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    id="Layer_2"
+    enable-background="new 0 0 500 500"
+    xml:space="preserve"
+    viewBox="0 0 500 500"
+    version="1.1"
+    y="0px"
+    x="0px"
+  >
+<linearGradient
+      id="SVGID_1_"
+      y2="233.2"
+      gradientUnits="userSpaceOnUse"
+      x2="491.07"
+      y1="233.2"
+      x1="14.916"
+    >
+	<stop
+        style="stop-color:#00AEEF"
+        offset="0"
+    />
+	<stop
+        style="stop-color:#00AFEF;stop-opacity:.9008"
+        offset=".0992"
+    />
+	<stop
+        style="stop-color:#00B2F0;stop-opacity:.777"
+        offset=".223"
+    />
+	<stop
+        style="stop-color:#00B8F1;stop-opacity:.64"
+        offset=".36"
+    />
+	<stop
+        style="stop-color:#00C2F3;stop-opacity:.4936"
+        offset=".5064"
+    />
+	<stop
+        style="stop-color:#6DCFF6;stop-opacity:.3396"
+        offset=".6604"
+    />
+	<stop
+        style="stop-color:#B0E2FA;stop-opacity:.1792"
+        offset=".8208"
+    />
+	<stop
+        style="stop-color:#F5FBFE;stop-opacity:.0165"
+        offset=".9835"
+    />
+	<stop
+        style="stop-color:#FFFFFF;stop-opacity:0"
+        offset="1"
+    />
+</linearGradient
+  >
+<path
+      stroke="#00AEEF"
+      stroke-width="15"
+      stroke-miterlimit="10"
+      d="m237.7 98.022c-28.518 1.625-56.705 18.162-74.662 40.216-6.817 8.373-7.536 22.563-16.967 28.657-9.877 6.383-24.65 0.827-35.576 1.804-19.056 1.704-42.747 15.176-57.851 26.375-21.173 15.7-39.106 45.28-37.639 72.17 1.705 31.25 12.5 56.251 33.523 73.296s32.954 22.72 41.477 26.13 333.24 1.137 333.24 1.137 51.988-34.658 59.375-49.432c14.618-29.236 11.744-74.125-20.158-90.243-6.304-3.184-13.092-5.181-20.184-5.301-8.141-0.136-19.536 8.156-24.625-1.14-3.752-6.853-1.513-15.887-4.483-23.029-6.743-16.212-23.43-28.02-40.132-32.081-5.053-1.229-10.235-1.781-15.419-2.083-4.445-0.258-9.662 1.652-13.987 0.34-5.381-1.632-7.401-7.342-10.111-11.924-20.65-34.91-53.98-57.303-95.83-54.918z"
+      fill="url(#SVGID_1_)"
+  />
+<metadata
+    ><rdf:RDF
+      ><cc:Work
+        ><dc:format
+          >image/svg+xml</dc:format
+        ><dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        /><cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        /><dc:publisher
+          ><cc:Agent
+              rdf:about="http://openclipart.org/"
+            ><dc:title
+              >Openclipart</dc:title
+            ></cc:Agent
+          ></dc:publisher
+        ></cc:Work
+      ><cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        ><cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        /><cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        /><cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        /></cc:License
+      ></rdf:RDF
+    ></metadata
+  ></svg
+>
