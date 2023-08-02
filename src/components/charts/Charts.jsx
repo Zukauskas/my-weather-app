@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { Global } from "../context/Global.jsx";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import "./Charts.css";
 
 const getRandomColor = () => {
     const r = Math.floor(Math.random() * 256);
@@ -16,9 +17,9 @@ const Charts = () => {
     const { weatherData } = useContext(Global);
     if (!weatherData) {
         return (
-            <div>
-                <h2>Charts</h2>
-                <div>No charts to show</div>
+            <div className="charts">
+                <h2 className="main-title">Charts</h2>
+                <div className="charts-container">No charts to show</div>
             </div>
         );
     }
@@ -107,8 +108,8 @@ const Charts = () => {
     });
 
     return (
-        <div>
-            <h2>Charts</h2>
+        <div className="charts">
+            <h2 className="main-title">Charts</h2>
             <div className="charts-container">{charts}</div>
         </div>
     );

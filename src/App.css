@@ -1,4 +1,8 @@
-#root {
-    margin: 0 auto;
-    text-align: center;
+body,
+body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
 }

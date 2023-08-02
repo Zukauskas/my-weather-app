@@ -1,18 +1,21 @@
 .marker-table-container {
+    display: flex;
+    flex-direction: column;
     border: 1px solid #ddd;
-    padding: 20px;
-    margin: 20px;
+    padding: 5px;
+    margin: 5px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 .table-title {
-    font-size: 1.5rem;
+    font-size: 1em;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .marker-table {
-    width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
 }
 
@@ -20,6 +23,7 @@
 .marker-table td {
     border: 1px solid #ddd;
     padding: 8px;
+    font-size: 0.7em;
     text-align: left;
 }
 

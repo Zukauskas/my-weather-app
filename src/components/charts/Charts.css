@@ -1,0 +1,11 @@
+.charts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.charts > .main-title {
+    text-align: center;
+}

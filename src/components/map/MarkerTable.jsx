@@ -24,7 +24,7 @@ const MarkerTable = ({ markers, onRemoveMarker, updateCharts }) => {
                                 <button
                                     className="remove-button"
                                     onClick={() => onRemoveMarker(index)}>
-                                    Remove
+                                    DEL
                                 </button>
                             </td>
                         </tr>
