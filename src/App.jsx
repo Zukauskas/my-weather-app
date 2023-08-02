@@ -1,6 +1,6 @@
 import "./App.css";
 import { GlobalProvider } from "./components/context/Global.jsx";
-import Graphs from "./components/graphs/Graphs.jsx";
+import Charts from "./components/charts/Charts.jsx";
 import MapContainer from "./components/map/MapContainer.jsx";
 import Toolbar from "./components/toolbar/Toolbar.jsx";
 
@@ -9,7 +9,7 @@ function App() {
         <GlobalProvider>
             <Toolbar />
             <MapContainer />
-            <Graphs />
+            <Charts />
         </GlobalProvider>
     );
 }

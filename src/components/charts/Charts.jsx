@@ -15,7 +15,12 @@ const getRandomColor = () => {
 const Graphs = () => {
     const { weatherData } = useContext(Global);
     if (!weatherData) {
-        return <div>Loading...</div>;
+        return (
+            <div>
+                <h2>Charts</h2>
+                <div>No charts to show</div>
+            </div>
+        );
     }
 
     const charts = weatherData.map((data, index) => {
@@ -92,7 +97,7 @@ const Graphs = () => {
         }
 
         return (
-            <div key={index}>
+            <div key={index} className="chart">
                 <HighchartsReact
                     highcharts={Highcharts}
                     options={chartOptions}
@@ -101,7 +106,12 @@ const Graphs = () => {
         );
     });
 
-    return <div>{charts}</div>;
+    return (
+        <div>
+            <h2>Charts</h2>
+            <div className="charts-container">{charts}</div>
+        </div>
+    );
 };
 
 export default Graphs;
