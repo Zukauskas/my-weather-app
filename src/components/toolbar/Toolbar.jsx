@@ -20,7 +20,7 @@ const Toolbar = () => {
 
     const variablesList = [
         { value: "temperature_2m", name: "Temperature" },
-        { value: "rain", name: "Rain" },
+        { value: "precipitation", name: "Precipitation" },
         { value: "windspeed_10m", name: "Wind speed" },
         { value: "relativehumidity_2m", name: "Humidity" },
         { value: "dewpoint_2m", name: "Dew Point" },
