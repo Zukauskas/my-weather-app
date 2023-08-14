@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { getWeatherData } from "../../utils/getWeatherData.js";
 
 export const Global = createContext();
@@ -20,6 +20,31 @@ export const GlobalProvider = ({ children }) => {
         setWeatherVariables(values);
     };
 
+    useEffect(() => {
+        const storedMarkers = sessionStorage.getItem("markers");
+        const storedStartDate = sessionStorage.getItem("startDate");
+        const storedEndDate = sessionStorage.getItem("endDate");
+        const storedWeatherVariables =
+            sessionStorage.getItem("weatherVariables");
+        const storedWeatherData = sessionStorage.getItem("weatherData");
+        if (storedMarkers) {
+            setMarkers(JSON.parse(storedMarkers));
+        }
+
+        if (storedStartDate && storedEndDate) {
+            setStartDate(storedStartDate);
+            setEndDate(storedEndDate);
+        }
+
+        if (storedWeatherVariables) {
+            setWeatherVariables(JSON.parse(storedWeatherVariables));
+        }
+
+        if (storedWeatherData) {
+            setWeatherData(JSON.parse(storedWeatherData));
+        }
+    }, []);
+
     const submitHandler = async (e) => {
         e.preventDefault();
         const data = await getWeatherData(
@@ -29,6 +54,14 @@ export const GlobalProvider = ({ children }) => {
             markers
         );
         setWeatherData(data);
+
+        sessionStorage.setItem("startDate", startDate);
+        sessionStorage.setItem("endDate", endDate);
+        sessionStorage.setItem(
+            "weatherVariables",
+            JSON.stringify(weatherVariables)
+        );
+        sessionStorage.setItem("weatherData", JSON.stringify(data));
     };
 
     return (
