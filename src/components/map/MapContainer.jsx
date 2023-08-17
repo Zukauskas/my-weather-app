@@ -21,7 +21,7 @@ const MapContainer = () => {
     const [selectedMarker, setSelectedMarker] = useState(null);
     const { isLoaded } = useJsApiLoader({
         id: "google-map-script",
-        googleMapsApiKey: process.env.GOOGLEMAPS_API_KEY,
+        googleMapsApiKey: import.meta.env.VITE_GOOGLEMAPS_API_KEY,
     });
 
     const center = useMemo(() => ({ lat: 54.9027, lng: 23.9096 }), []);
