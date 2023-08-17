@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState, useEffect } from "react";
 import { getWeatherData } from "../../utils/getWeatherData.js";
+import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 
 export const Global = createContext();
 
@@ -10,6 +11,46 @@ export const GlobalProvider = ({ children }) => {
     const [weatherVariables, setWeatherVariables] = useState({});
     let [weatherData, setWeatherData] = useState(null);
     const [markers, setMarkers] = useState([]);
+
+    const [user, setUser] = useState();
+    const [profile, setProfile] = useState();
+
+    const login = useGoogleLogin({
+        onSuccess: (codeResponse) => setUser(codeResponse),
+        onError: (error) => console.log("Login Failed:", error),
+    });
+
+    useEffect(() => {
+        if (user) {
+            fetch(
+                `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
+                {
+                    method: "GET",
+                    headers: {
+                        Authorization: `Bearer ${user.access_token}`,
+                        Accept: "application/json",
+                    },
+                }
+            )
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    setProfile(data);
+                })
+                .catch((error) => {
+                    console.error("Error fetching data:", error);
+                });
+        }
+    }, [user]);
+
+    const logout = () => {
+        googleLogout();
+        setProfile(null);
+    };
 
     const weatherVariablesHandler = (e) => {
         const collection = e.target.selectedOptions;
@@ -77,6 +118,10 @@ export const GlobalProvider = ({ children }) => {
                 weatherData,
                 markers,
                 setMarkers,
+                user,
+                profile,
+                login,
+                logout,
             }}>
             {children}
         </Global.Provider>
