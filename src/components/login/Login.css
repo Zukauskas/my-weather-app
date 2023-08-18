@@ -1,6 +1,7 @@
 .login-container {
     text-align: center;
-    margin: 20px;
+    margin: 0 auto;
+    width: 100%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -27,4 +28,11 @@
 
 .login-button:hover {
     background-color: #357ae8;
+}
+
+@media (min-width: 720px) {
+    .login-container {
+        max-width: 50%;
+        margin: 25px auto;
+    }
 }

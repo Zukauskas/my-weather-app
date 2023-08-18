@@ -9,7 +9,7 @@ export default function Login() {
         <div className="login-container">
             <p className="login-message">
                 You are not signed in. Please sign in with Google to access the
-                app&apos;s features.
+                weather app.
             </p>
             <button className="login-button" onClick={() => login()}>
                 Sign in with Google
