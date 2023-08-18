@@ -10,6 +10,7 @@ const Toolbar = () => {
         setEndDate,
         endDate,
         weatherVariablesHandler,
+        logout,
     } = useContext(Global);
 
     const [isToolbarVisible, setIsToolbarVisible] = useState(false);
@@ -28,9 +29,16 @@ const Toolbar = () => {
 
     return (
         <div className="toolbar-container">
-            <button className="toggle-button" onClick={toggleToolbarVisibility}>
-                Toggle Toolbar
-            </button>
+            <div className="toolbar-buttons">
+                <button
+                    className="toggle-button"
+                    onClick={toggleToolbarVisibility}>
+                    Toggle Toolbar
+                </button>
+                <button className="logout-button" onClick={() => logout()}>
+                    Logout
+                </button>
+            </div>
 
             {isToolbarVisible && (
                 <form onSubmit={submitHandler}>

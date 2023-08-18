@@ -43,10 +43,11 @@
     background-color: #0056b3;
 }
 
-.toggle-button {
+.toggle-button,
+.logout-button {
     background-color: #17a2b8;
     color: white;
-    align-self: center;
+    justify-self: center;
     max-width: fit-content;
     border: none;
     padding: 8px 12px;
@@ -55,8 +56,17 @@
     transition: background-color 0.3s ease;
 }
 
+.toggle-button {
+    margin-left: 25%;
+}
+
 .toggle-button:hover {
     background-color: #138496;
+}
+
+.toolbar-buttons {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
 }
 
 @media (min-width: 720px) {
