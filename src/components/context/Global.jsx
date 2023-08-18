@@ -50,6 +50,7 @@ export const GlobalProvider = ({ children }) => {
     const logout = () => {
         googleLogout();
         setProfile(null);
+        setUser(null);
     };
 
     const weatherVariablesHandler = (e) => {

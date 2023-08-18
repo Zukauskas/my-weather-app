@@ -9,7 +9,7 @@ function Auth({ children }) {
     if (user) {
         return <>{children}</>;
     }
-    if (user === undefined) {
+    if (user === undefined || user === null) {
         return <Login />;
     }
 }
