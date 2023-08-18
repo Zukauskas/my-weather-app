@@ -26,15 +26,6 @@ const Chart = React.memo(({ chartOptions }) => {
 const Charts = () => {
     const { weatherData } = useContext(Global);
 
-    if (!weatherData) {
-        return (
-            <div className="charts">
-                <h2 className="main-title">Charts</h2>
-                <div className="no-charts-container">No charts to show</div>
-            </div>
-        );
-    }
-
     const charts = useMemo(() => {
         if (!weatherData) {
             return [];
@@ -126,6 +117,15 @@ const Charts = () => {
             return <Chart key={index} chartOptions={chartOptions} />;
         });
     }, [weatherData]);
+
+    if (!weatherData) {
+        return (
+            <div className="charts">
+                <h2 className="main-title">Charts</h2>
+                <div className="no-charts-container">No charts to show</div>
+            </div>
+        );
+    }
 
     return (
         <div className="charts">
