@@ -10,6 +10,7 @@ const Toolbar = () => {
         setEndDate,
         endDate,
         weatherVariablesHandler,
+        logout,
     } = useContext(Global);
 
     const [isToolbarVisible, setIsToolbarVisible] = useState(false);
@@ -18,11 +19,26 @@ const Toolbar = () => {
         setIsToolbarVisible(!isToolbarVisible);
     };
 
+    const variablesList = [
+        { value: "temperature_2m", name: "Temperature" },
+        { value: "precipitation", name: "Precipitation" },
+        { value: "windspeed_10m", name: "Wind speed" },
+        { value: "relativehumidity_2m", name: "Humidity" },
+        { value: "dewpoint_2m", name: "Dew Point" },
+    ];
+
     return (
         <div className="toolbar-container">
-            <button className="toggle-button" onClick={toggleToolbarVisibility}>
-                Toggle Toolbar
-            </button>
+            <div className="toolbar-buttons">
+                <button
+                    className="toggle-button"
+                    onClick={toggleToolbarVisibility}>
+                    Toggle Toolbar
+                </button>
+                <button className="logout-button" onClick={() => logout()}>
+                    Logout
+                </button>
+            </div>
 
             {isToolbarVisible && (
                 <form onSubmit={submitHandler}>
@@ -57,10 +73,11 @@ const Toolbar = () => {
                         id="variables"
                         multiple
                         onChange={weatherVariablesHandler}>
-                        <option value="temperature_2m">Temperature</option>
-                        <option value="windspeed_10m">Wind speed</option>
-                        <option value="relativehumidity_2m">Humidity</option>
-                        <option value="dewpoint_2m">Dew Point</option>
+                        {variablesList.map((variable) => (
+                            <option key={variable.value} value={variable.value}>
+                                {variable.name}
+                            </option>
+                        ))}
                     </select>
                     <button className="toolbar-button" type="submit">
                         Update charts

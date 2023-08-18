@@ -21,23 +21,27 @@ const MapContainer = () => {
     const [selectedMarker, setSelectedMarker] = useState(null);
     const { isLoaded } = useJsApiLoader({
         id: "google-map-script",
-        googleMapsApiKey: process.env.GOOGLEMAPS_API_KEY,
+        googleMapsApiKey: import.meta.env.VITE_GOOGLEMAPS_API_KEY,
     });
 
     const center = useMemo(() => ({ lat: 54.9027, lng: 23.9096 }), []);
 
     const handleMapClick = (e) => {
-        setMarkers((prevMarkers) => [
-            ...prevMarkers,
-            {
-                lat: +e.latLng.lat().toFixed(6),
-                lng: +e.latLng.lng().toFixed(6),
-            },
-        ]);
+        const newMarker = {
+            lat: +e.latLng.lat().toFixed(6),
+            lng: +e.latLng.lng().toFixed(6),
+        };
+        const updatedMarkers = [...markers, newMarker];
+        setMarkers(updatedMarkers);
+
+        sessionStorage.setItem("markers", JSON.stringify(updatedMarkers));
     };
 
     const handleRemoveMarker = (index) => {
-        setMarkers((prevMarkers) => prevMarkers.filter((_, i) => i !== index));
+        const updatedMarkers = markers.filter((_, i) => i !== index);
+        setMarkers(updatedMarkers);
+
+        sessionStorage.setItem("markers", JSON.stringify(updatedMarkers));
     };
 
     const updateCharts = (e) => {
