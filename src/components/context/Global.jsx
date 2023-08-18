@@ -13,44 +13,27 @@ export const GlobalProvider = ({ children }) => {
     const [markers, setMarkers] = useState([]);
 
     const [user, setUser] = useState();
-    const [profile, setProfile] = useState();
+
+    useEffect(() => {
+        // Check if user is logged in after refresh
+        const loggedUser = sessionStorage.getItem("user");
+        if (loggedUser) {
+            setUser(JSON.parse(loggedUser));
+        }
+    }, []);
 
     const login = useGoogleLogin({
-        onSuccess: (codeResponse) => setUser(codeResponse),
+        onSuccess: (codeResponse) => {
+            setUser(codeResponse);
+            sessionStorage.setItem("user", JSON.stringify(codeResponse));
+        },
         onError: (error) => console.log("Login Failed:", error),
     });
 
-    useEffect(() => {
-        if (user) {
-            fetch(
-                `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
-                {
-                    method: "GET",
-                    headers: {
-                        Authorization: `Bearer ${user.access_token}`,
-                        Accept: "application/json",
-                    },
-                }
-            )
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error("Network response was not ok");
-                    }
-                    return response.json();
-                })
-                .then((data) => {
-                    setProfile(data);
-                })
-                .catch((error) => {
-                    console.error("Error fetching data:", error);
-                });
-        }
-    }, [user]);
-
     const logout = () => {
         googleLogout();
-        setProfile(null);
         setUser(null);
+        sessionStorage.removeItem("user");
     };
 
     const weatherVariablesHandler = (e) => {
@@ -120,7 +103,6 @@ export const GlobalProvider = ({ children }) => {
                 markers,
                 setMarkers,
                 user,
-                profile,
                 login,
                 logout,
             }}>
