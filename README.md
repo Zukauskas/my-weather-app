@@ -14,13 +14,12 @@ Project deployed on Vercel: https://my-weather-app-gold.vercel.app/
 -   Open-meteo for weather data
 -   Google Maps Javascript API for interactive map
 -   Highcharts for chart visualization
+-   Authorization
 
 For future:
 
 -   More validation
 -   Docker Image
--   Authorization
--   Add more weather variables options
 
 ## 🧰 Getting Started
 
